@@ -38,4 +38,8 @@ else{
 	var armor = "bareskin";
 }
 
-var logIn = confirm("Done! Your character, " + userName + " has been completed! Are you ready to log into Argantua?");
+var logIn = confirm("Done! Your character, " + userName + " has been completed with the following weapons and armor: "+weapon+" and "+armor+". Are you ready to log into Argantua?");
+
+if(logIn === false){
+	Program.restart();
+}
