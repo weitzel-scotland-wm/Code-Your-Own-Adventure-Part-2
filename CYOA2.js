@@ -6,13 +6,14 @@
 var weapon = [];
 var armor = [];
 var userName = prompt("Welcome to Argantua: The leading online virtual fantasy combat game. Please wait while we scan your face...Done! What is your name?");
+var gameOver = confirm("You are dead. GAME OVER.");
 /* ----------CALL VARIABLES---------- */
 
 //console.log(userName);
 
 var pickTheWeapon = prompt("Welcome, " + userName + ", you are about to get into the most advanced virtual world available. Because you're entering for the first time, you need to select your character's weapon. Pick one out of the 3: LONGSWORD, DUAL KNIVES, or MACE?").toLowerCase();
 if(pickTheWeapon === "longsword"){
-    var weapon = "longsword";
+    weapon.push("longsword");
 }
 else if(pickTheWeapon === "dual knives"){
     var weapon = "dual knives";
@@ -41,5 +42,25 @@ else{
 var logIn = confirm("Done! Your character, " + userName + " has been completed with the following weapons and armor: "+weapon+" and "+armor+". Are you ready to log into Argantua?");
 
 if(logIn === false){
-	Program.restart();
+	var quickReload = function(){
+		location.reload();
+	}
 }
+
+alert("Your character disappears from in front of you and the lights all fade to black. You feel a light feeling in your stomach as you fall down slowly at first. The feeling gets stronger as you accelerate downwards towards a landmass below you. You can see the sunset now on the horizon and you now start to feel yourself slowing down as you gently land on the grassy hill below you. What you're looking at is Argantua --- A small portion of it.");
+alert("You decide to walk on, following the path that has been stamped out by the other users of Argantua. As you get familiar with the controls and landscape, you decide to quicken your pace. Eventually you're running; virtual reality has never felt so good and you realize running is a lot of fun when you don't get tired. You spin and you don't get dizzy, you jump higher than you normally can in the real world.");
+alert("Through your moment of absolute bliss, you accidentally smack into something, something hard. Being knocked to your back didn't feel too good and you now understand that pain exists in this world even if you don't get tired from running. You look up to see what you knocked into and you see a ferocious looking fiend. It stands a head taller than you and is pounding the ground in anger.");
+
+var fiendStartFight = prompt("Do you want to FIGHT the fiend? or RUN away?").toLowerCase();
+
+if(fiendStartFight === "fight"){
+
+}
+else if(fiendStartFight === "run"){
+
+}
+else{
+    alert("Due to your indecisiveness the fiend grabs onto you, lifts you into the air and smashes you into the ground. Killing your character.");
+    var gameOver = confirm("You are dead. GAME OVER.")
+}
+
