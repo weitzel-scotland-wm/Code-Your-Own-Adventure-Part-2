@@ -58,8 +58,27 @@ if(fiendStartFight === "fight") {
     }
     else{
         var slaying = true;
-        while(slaying === true){
-            
+        var youHit = Math.floor(Math.random() *2)
+        var damageThisRound = Math.floor(Math.random() *5 + 1)
+        var totalDamage = 0
+        while(slaying){
+            if (youHit = 1){
+                console.log("Wow...You actually hit that thing!")
+                totalDamage = totalDamage += damageThisRound
+                if(totalDamage >= 20){
+                    alert("Congratulations, you have killed the fiend!");
+                    slaying = false;
+                    var fightDone = true;
+                }
+                else if(totalDamage >= 5){
+                    alert("You have staggered the fiend! Keep going!")
+                }
+            }
+            else {
+                console.log("Your " + weapon + " misses the fiend by an inch: a mistake that will cost you your head. The fiend rears its hand and slashes your head into two.");
+                slaying = false;
+                var fightDone = false
+            }
         }
     }
 
@@ -79,5 +98,12 @@ else if(fiendStartFight === "run"){
 else{
     alert("Due to your indecisiveness the fiend grabs onto you, lifts you into the air and smashes you into the ground. Killing your character.");
     confirm("You are dead. GAME OVER.");
+}
+
+if(fightDone){
+    alert("You have killed the fiend; good job on killing your first monster. Enjoy the rest of your journey in Argantua!")
+}
+else{
+    alert("You failed to kill your first monster. That's unfortunate, but Argantua is just a game. Refresh the page and try again.")
 }
 
