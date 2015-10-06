@@ -6,7 +6,6 @@
 var weapon = [];
 var armor = [];
 var userName = prompt("Welcome to Argantua: The leading online virtual fantasy combat game. Please wait while we scan your face...Done! What is your name?");
-var gameOver = confirm("You are dead. GAME OVER.");
 /* ----------CALL VARIABLES---------- */
 
 //console.log(userName);
@@ -53,14 +52,32 @@ alert("Through your moment of absolute bliss, you accidentally smack into someth
 
 var fiendStartFight = prompt("Do you want to FIGHT the fiend? or RUN away?").toLowerCase();
 
-if(fiendStartFight === "fight"){
+if(fiendStartFight === "fight") {
+    if(armor === "bareskin"){
+        alert("Because you decided to not pick an armor, the have no advantage in the fight. You run straight at the fiend only to be killed in one hit.");
+    }
+    else{
+        var slaying = true;
+        while(slaying === true){
+            
+        }
+    }
 
 }
 else if(fiendStartFight === "run"){
+	if(armor === "light armor"){
+        confirm("Because you decided to pick light armor, you can run fast enough to escape the fiend and you run far enough to where the fiend decides it's not worth it to chase you.");
+    }
+    else if(armor === "medium armor" ){
+        confirm("Your choice in medium armor wasn't the best, but it's light enough to escape the fiend. You barely escape its attempts to catch you.");
+    }
+    else{
+        confirm("Because of your heavy plate armor, you aren't able to escape the fiend in time. He grabs you and kills you in one bite.");
+    }
 
 }
 else{
     alert("Due to your indecisiveness the fiend grabs onto you, lifts you into the air and smashes you into the ground. Killing your character.");
-    var gameOver = confirm("You are dead. GAME OVER.")
+    confirm("You are dead. GAME OVER.");
 }
 
